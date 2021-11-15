@@ -13,3 +13,9 @@ MonoBehaviour:
   m_Name: New Question 0
   m_EditorClassIdentifier: 
   question: What color is blue?
+  answers:
+  - green
+  - purple
+  - blue
+  - red
+  correctAnswerIndex: 2

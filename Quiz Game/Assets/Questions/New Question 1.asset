@@ -15,3 +15,9 @@ MonoBehaviour:
   question: 'What color is red?
 
 '
+  answers:
+  - blue
+  - red
+  - green
+  - yellow
+  correctAnswerIndex: 1
