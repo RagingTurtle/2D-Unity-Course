@@ -15,6 +15,11 @@ public class Quiz : MonoBehaviour
 
     void Start()
     {
+        DisplayQuestion();
+    }
+
+    private void DisplayQuestion()
+    {
         questionText.text = question.GetQuestion();
 
         for (int i = 0; i < answerButtons.Length; i++)
@@ -23,6 +28,7 @@ public class Quiz : MonoBehaviour
             buttonText.text = question.GetAnswer(i);
         }
     }
+
     public void OnAnswerSelect(int index)
     {
         if (index == question.GetCorrectAnswerIndex())
