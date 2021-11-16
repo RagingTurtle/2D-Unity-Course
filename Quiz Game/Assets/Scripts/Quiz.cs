@@ -30,7 +30,7 @@ public class Quiz : MonoBehaviour
 
     public bool isComplete = false;
 
-    void Start()
+    void Awake()
     {
         timer = FindObjectOfType<Timer>();
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
@@ -95,6 +95,11 @@ public class Quiz : MonoBehaviour
         else
         {
             questionText.text = "GAME OVER!";
+            if (progressBar.value == progressBar.maxValue)
+            {
+                isComplete = true;
+            }
+
         }
     }
 
@@ -112,10 +117,6 @@ public class Quiz : MonoBehaviour
         SetButtonState(false);
         timer.CancelTimer();
         scoreText.text = "Score: " + scoreKeeper.CalcScore() + "%";
-        if (progressBar.value == progressBar.maxValue)
-        {
-            isComplete = true;
-        }
     }
 
     private void DisplayAnswer(int index)
