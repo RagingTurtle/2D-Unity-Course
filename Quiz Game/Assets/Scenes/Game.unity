@@ -332,6 +332,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 225926106}
   m_CullTransparentMesh: 1
+--- !u!1 &385277011 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3630045847218190141, guid: ca0ab0294c3c4664494d7b5a21e610f2, type: 3}
+  m_PrefabInstance: {fileID: 1855614288}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &448957697
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,6 +553,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questionText: {fileID: 685210299}
   question: {fileID: 11400000, guid: 0b42aee7e215be342ac38703a4557ba2, type: 2}
+  answerButtons:
+  - {fileID: 1057212974}
+  - {fileID: 1178218222}
+  - {fileID: 2004719526}
+  - {fileID: 385277011}
 --- !u!1 &461192889
 GameObject:
   m_ObjectHideFlags: 0
@@ -1100,6 +1110,16 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7372015157153938941, guid: ca0ab0294c3c4664494d7b5a21e610f2, type: 3}
   m_PrefabInstance: {fileID: 913604385}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1057212974 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3630045847218190141, guid: ca0ab0294c3c4664494d7b5a21e610f2, type: 3}
+  m_PrefabInstance: {fileID: 1715284262548716503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1178218222 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3630045847218190141, guid: ca0ab0294c3c4664494d7b5a21e610f2, type: 3}
+  m_PrefabInstance: {fileID: 913604385}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1270922751
 GameObject:
   m_ObjectHideFlags: 0
@@ -1377,6 +1397,11 @@ PrefabInstance:
 --- !u!224 &1987354307 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7372015157153938941, guid: ca0ab0294c3c4664494d7b5a21e610f2, type: 3}
+  m_PrefabInstance: {fileID: 1987354306}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2004719526 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3630045847218190141, guid: ca0ab0294c3c4664494d7b5a21e610f2, type: 3}
   m_PrefabInstance: {fileID: 1987354306}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1715284262548716503
