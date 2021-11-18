@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 2f;
+    [SerializeField] float jumpSpeed = 5f;
     Vector2 moveInput;
     Rigidbody2D playerRigidbody2D;
     Animator playerAnimator;
@@ -40,6 +41,14 @@ public class PlayerMovement : MonoBehaviour
         if (playerHasHorizontalSpeed)
         {
             transform.localScale = new Vector2(Mathf.Sign(playerRigidbody2D.velocity.x), 1f);
+        }
+    }
+
+    void OnJump(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            playerRigidbody2D.velocity += new Vector2(0f, jumpSpeed);
         }
     }
 }

@@ -4568,12 +4568,20 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -5510143955685184220, guid: 04ad6c7434d2aef47a7f1ac2a4d767ff, type: 3}
+      propertyPath: m_GravityScale
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -5510143955685184220, guid: 04ad6c7434d2aef47a7f1ac2a4d767ff, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1748757765871856384, guid: 04ad6c7434d2aef47a7f1ac2a4d767ff, type: 3}
+      propertyPath: jumpSpeed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1748757765871856384, guid: 04ad6c7434d2aef47a7f1ac2a4d767ff, type: 3}
       propertyPath: moveSpeed
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5773421692593454544, guid: 04ad6c7434d2aef47a7f1ac2a4d767ff, type: 3}
       propertyPath: m_Name
