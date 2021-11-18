@@ -7,10 +7,12 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 2f;
     Vector2 moveInput;
-    Rigidbody2D rb2d;
+    Rigidbody2D playerRigidbody2D;
+    Animator playerAnimator;
     void Start()
     {
-        rb2d = GetComponent<Rigidbody2D>();
+        playerRigidbody2D = GetComponent<Rigidbody2D>();
+        playerAnimator = GetComponent<Animator>();
     }
 
     void Update()
@@ -22,21 +24,22 @@ public class PlayerMovement : MonoBehaviour
     void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
-        Debug.Log(moveInput);
     }
 
     void Run()
     {
-        Vector2 playerVelocity = new Vector2(moveInput.x * moveSpeed, rb2d.velocity.y);
-        rb2d.velocity = playerVelocity;
+        Vector2 playerVelocity = new Vector2(moveInput.x * moveSpeed, playerRigidbody2D.velocity.y);
+        playerRigidbody2D.velocity = playerVelocity;
+        bool playerHasHorizontalSpeed = Mathf.Abs(playerRigidbody2D.velocity.x) > Mathf.Epsilon;
+        playerAnimator.SetBool("isRunning", playerHasHorizontalSpeed);
     }
 
     void FlipSprite()
     {
-        bool playerHasHorizontalSpeed = Mathf.Abs(rb2d.velocity.x) > Mathf.Epsilon;
+        bool playerHasHorizontalSpeed = Mathf.Abs(playerRigidbody2D.velocity.x) > Mathf.Epsilon;
         if (playerHasHorizontalSpeed)
         {
-            transform.localScale = new Vector2(Mathf.Sign(rb2d.velocity.x), 1f);
+            transform.localScale = new Vector2(Mathf.Sign(playerRigidbody2D.velocity.x), 1f);
         }
     }
 }
