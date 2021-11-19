@@ -26,10 +26,6 @@ public class PlayerMovement : MonoBehaviour
         Run();
         FlipSprite();
         Climbing();
-        if (isTouchingGround())
-        {
-            gravityOn();
-        }
     }
 
     void OnMove(InputValue value)
@@ -56,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump(InputValue value)
     {
-        if (value.isPressed && isTouchingGround())
+        if (value.isPressed && playerCapsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
             playerRigidbody2D.velocity += new Vector2(0f, jumpSpeed);
         }
@@ -74,17 +70,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            gravityOn();
+            playerRigidbody2D.gravityScale = gravityAtStart;
         }
-
-    }
-
-    bool isTouchingGround()
-    {
-        return playerCapsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground"));
-    }
-    void gravityOn()
-    {
-        playerRigidbody2D.gravityScale = gravityAtStart;
     }
 }
