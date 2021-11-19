@@ -71,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             playerRigidbody2D.gravityScale = gravityAtStart;
+            playerAnimator.SetBool("isClimbing", false);
         }
     }
 }
