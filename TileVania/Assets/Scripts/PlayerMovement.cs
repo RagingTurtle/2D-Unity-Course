@@ -11,13 +11,15 @@ public class PlayerMovement : MonoBehaviour
     Vector2 moveInput;
     Rigidbody2D playerRigidbody2D;
     Animator playerAnimator;
-    CapsuleCollider2D playerCapsuleCollider2D;
+    CapsuleCollider2D playerBodyCollider2D;
+    BoxCollider2D playerFeetCollider2D;
     float gravityAtStart;
     void Start()
     {
         playerRigidbody2D = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
-        playerCapsuleCollider2D = GetComponent<CapsuleCollider2D>();
+        playerBodyCollider2D = GetComponent<CapsuleCollider2D>();
+        playerFeetCollider2D = GetComponent<BoxCollider2D>();
         gravityAtStart = playerRigidbody2D.gravityScale;
     }
 
@@ -52,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump(InputValue value)
     {
-        if (value.isPressed && playerCapsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        if (value.isPressed && playerFeetCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
             playerRigidbody2D.velocity += new Vector2(0f, jumpSpeed);
         }
@@ -60,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Climbing()
     {
-        if (playerCapsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Climbing")))
+        if (playerFeetCollider2D.IsTouchingLayers(LayerMask.GetMask("Climbing")))
         {
             Vector2 playerVelocity = new Vector2(playerRigidbody2D.velocity.x, moveInput.y * climbSpeed);
             playerRigidbody2D.velocity = playerVelocity;

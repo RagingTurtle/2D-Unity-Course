@@ -8379,7 +8379,7 @@ CompositeCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.01}
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
@@ -8444,34 +8444,34 @@ CompositeCollider2D:
         Y: -60000000
   m_CompositePaths:
     m_Paths:
-    - - {x: 13.999971, y: -8}
-      - {x: 13.999971, y: 6}
-      - {x: -16, y: 5.999971}
-      - {x: -15.999971, y: -8}
-    - - {x: 12, y: -5.9999704}
-      - {x: 3, y: -5.9999704}
-      - {x: 2.999971, y: 0}
-      - {x: 2, y: -0.000029300001}
-      - {x: 1.9999707, y: -3}
-      - {x: 0, y: -2.9999707}
-      - {x: -0.000029300001, y: -2}
-      - {x: -3, y: -2.0000293}
-      - {x: -3.0000293, y: -3}
-      - {x: -4, y: -3.0000293}
-      - {x: -4.0000296, y: -4}
-      - {x: -6, y: -3.9999704}
-      - {x: -6.000029, y: -1}
-      - {x: -8, y: -1.0000293}
-      - {x: -8.00003, y: -2}
-      - {x: -10, y: -2.0000293}
-      - {x: -10.00003, y: -3}
-      - {x: -12, y: -3.0000293}
-      - {x: -12.00003, y: -4}
-      - {x: -13, y: -4.000029}
-      - {x: -13.00003, y: -5}
-      - {x: -15, y: -4.9999704}
-      - {x: -14.999971, y: 5}
-      - {x: 12, y: 4.9999704}
+    - - {x: 13.999971, y: -7.99}
+      - {x: 13.999971, y: 6.01}
+      - {x: -16, y: 6.009971}
+      - {x: -15.999971, y: -7.99}
+    - - {x: 12, y: -5.98997}
+      - {x: 3, y: -5.98997}
+      - {x: 2.999971, y: 0.01}
+      - {x: 2, y: 0.009970699}
+      - {x: 1.9999707, y: -2.99}
+      - {x: 0, y: -2.9899707}
+      - {x: -0.000029300001, y: -1.99}
+      - {x: -3, y: -1.9900293}
+      - {x: -3.0000293, y: -2.99}
+      - {x: -4, y: -2.9900293}
+      - {x: -4.0000296, y: -3.99}
+      - {x: -6, y: -3.9899704}
+      - {x: -6.000029, y: -0.99}
+      - {x: -8, y: -0.99002934}
+      - {x: -8.00003, y: -1.99}
+      - {x: -10, y: -1.9900293}
+      - {x: -10.00003, y: -2.99}
+      - {x: -12, y: -2.9900293}
+      - {x: -12.00003, y: -3.99}
+      - {x: -13, y: -3.990029}
+      - {x: -13.00003, y: -4.99}
+      - {x: -15, y: -4.98997}
+      - {x: -14.999971, y: 5.01}
+      - {x: 12, y: 5.0099707}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!19719996 &1110131870
@@ -9229,37 +9229,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -5510143955685184220, guid: 04ad6c7434d2aef47a7f1ac2a4d767ff, type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: -5510143955685184220, guid: 04ad6c7434d2aef47a7f1ac2a4d767ff, type: 3}
-      propertyPath: m_GravityScale
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: -5510143955685184220, guid: 04ad6c7434d2aef47a7f1ac2a4d767ff, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 765308506278194383, guid: 04ad6c7434d2aef47a7f1ac2a4d767ff, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: fc7b3fd5b847000459e92bd4eca24fcf, type: 2}
-    - target: {fileID: 1748757765871856384, guid: 04ad6c7434d2aef47a7f1ac2a4d767ff, type: 3}
-      propertyPath: jumpSpeed
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1748757765871856384, guid: 04ad6c7434d2aef47a7f1ac2a4d767ff, type: 3}
-      propertyPath: moveSpeed
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 5773421692593454544, guid: 04ad6c7434d2aef47a7f1ac2a4d767ff, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5773421692593454544, guid: 04ad6c7434d2aef47a7f1ac2a4d767ff, type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5773421692593454549, guid: 04ad6c7434d2aef47a7f1ac2a4d767ff, type: 3}
       propertyPath: m_RootOrder
