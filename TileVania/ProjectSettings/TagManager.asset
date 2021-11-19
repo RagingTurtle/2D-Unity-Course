@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Bouncing
   - 
   - 
-  - 
+  - Enemy
   - Player
   - Background
   - 
@@ -58,4 +59,7 @@ TagManager:
     locked: 0
   - name: Bouncing
     uniqueID: 3218184221
+    locked: 0
+  - name: Enemy
+    uniqueID: 4011247565
     locked: 0
