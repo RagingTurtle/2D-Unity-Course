@@ -10,10 +10,12 @@ public class PlayerMovement : MonoBehaviour
     Vector2 moveInput;
     Rigidbody2D playerRigidbody2D;
     Animator playerAnimator;
+    CapsuleCollider2D playerCapsuleCollider2D;
     void Start()
     {
         playerRigidbody2D = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
+        playerCapsuleCollider2D = GetComponent<CapsuleCollider2D>();
     }
 
     void Update()
@@ -46,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump(InputValue value)
     {
-        if (value.isPressed)
+        if (value.isPressed && playerCapsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
             playerRigidbody2D.velocity += new Vector2(0f, jumpSpeed);
         }
