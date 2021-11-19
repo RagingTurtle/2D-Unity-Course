@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 2f;
     [SerializeField] float jumpSpeed = 5f;
+    [SerializeField] float climbSpeed = 3f;
     Vector2 moveInput;
     Rigidbody2D playerRigidbody2D;
     Animator playerAnimator;
@@ -22,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Run();
         FlipSprite();
+        Climbing();
     }
 
     void OnMove(InputValue value)
@@ -52,5 +54,17 @@ public class PlayerMovement : MonoBehaviour
         {
             playerRigidbody2D.velocity += new Vector2(0f, jumpSpeed);
         }
+    }
+
+    void Climbing()
+    {
+        if (playerCapsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Climbing")))
+        {
+            Vector2 playerVelocity = new Vector2(playerRigidbody2D.velocity.x, moveInput.y * climbSpeed);
+            playerRigidbody2D.velocity = playerVelocity;
+            bool playerHasClimbSpeed = Mathf.Abs(playerRigidbody2D.velocity.y) > Mathf.Epsilon;
+            playerAnimator.SetBool("isClimbing", playerHasClimbSpeed);
+        }
+
     }
 }
