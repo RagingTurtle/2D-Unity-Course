@@ -13,14 +13,14 @@ TagManager:
   - UI
   - Ground
   - Climbing
+  - 
+  - 
+  - Bouncing
+  - 
+  - 
+  - 
   - Player
   - Background
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
   - 
   - 
   - 
@@ -55,4 +55,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2790100361
+    locked: 0
+  - name: Bouncing
+    uniqueID: 3218184221
     locked: 0
