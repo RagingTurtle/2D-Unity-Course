@@ -12,11 +12,13 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D playerRigidbody2D;
     Animator playerAnimator;
     CapsuleCollider2D playerCapsuleCollider2D;
+    float gravityAtStart;
     void Start()
     {
         playerRigidbody2D = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
         playerCapsuleCollider2D = GetComponent<CapsuleCollider2D>();
+        gravityAtStart = playerRigidbody2D.gravityScale;
     }
 
     void Update()
@@ -24,6 +26,10 @@ public class PlayerMovement : MonoBehaviour
         Run();
         FlipSprite();
         Climbing();
+        if (isTouchingGround())
+        {
+            gravityOn();
+        }
     }
 
     void OnMove(InputValue value)
@@ -50,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump(InputValue value)
     {
-        if (value.isPressed && playerCapsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        if (value.isPressed && isTouchingGround())
         {
             playerRigidbody2D.velocity += new Vector2(0f, jumpSpeed);
         }
@@ -64,7 +70,21 @@ public class PlayerMovement : MonoBehaviour
             playerRigidbody2D.velocity = playerVelocity;
             bool playerHasClimbSpeed = Mathf.Abs(playerRigidbody2D.velocity.y) > Mathf.Epsilon;
             playerAnimator.SetBool("isClimbing", playerHasClimbSpeed);
+            playerRigidbody2D.gravityScale = 0f;
+        }
+        else
+        {
+            gravityOn();
         }
 
+    }
+
+    bool isTouchingGround()
+    {
+        return playerCapsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground"));
+    }
+    void gravityOn()
+    {
+        playerRigidbody2D.gravityScale = gravityAtStart;
     }
 }
