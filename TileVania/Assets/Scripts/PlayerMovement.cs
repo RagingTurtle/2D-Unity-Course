@@ -95,6 +95,8 @@ public class PlayerMovement : MonoBehaviour
         if (playerBodyCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy")))
         {
             isAlive = false;
+            playerAnimator.SetTrigger("Die");
+            GetComponent<SpriteRenderer>().color = Color.red;
         }
     }
 }
