@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Hazard
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - 
   - Bouncing
   - 
-  - 
+  - Hazard
   - Enemy
   - Player
   - Background
@@ -62,4 +63,7 @@ TagManager:
     locked: 0
   - name: Enemy
     uniqueID: 4011247565
+    locked: 0
+  - name: Hazard
+    uniqueID: 3192986685
     locked: 0
