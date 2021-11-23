@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     CapsuleCollider2D playerBodyCollider2D;
     BoxCollider2D playerFeetCollider2D;
     float gravityAtStart;
+    bool isAlive = true;
+
     void Start()
     {
         playerRigidbody2D = GetComponent<Rigidbody2D>();
@@ -25,14 +27,22 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        Run();
-        FlipSprite();
-        Climbing();
+        if (isAlive)
+        {
+            Run();
+            FlipSprite();
+            Climbing();
+            Die();
+        }
     }
 
     void OnMove(InputValue value)
     {
-        moveInput = value.Get<Vector2>();
+        if (isAlive)
+        {
+            moveInput = value.Get<Vector2>();
+        }
+
     }
 
     void Run()
@@ -54,9 +64,12 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump(InputValue value)
     {
-        if (value.isPressed && playerFeetCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        if (isAlive)
         {
-            playerRigidbody2D.velocity += new Vector2(0f, jumpSpeed);
+            if (value.isPressed && playerFeetCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground")))
+            {
+                playerRigidbody2D.velocity += new Vector2(0f, jumpSpeed);
+            }
         }
     }
 
@@ -74,6 +87,14 @@ public class PlayerMovement : MonoBehaviour
         {
             playerRigidbody2D.gravityScale = gravityAtStart;
             playerAnimator.SetBool("isClimbing", false);
+        }
+    }
+
+    void Die()
+    {
+        if (playerBodyCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy")))
+        {
+            isAlive = false;
         }
     }
 }
