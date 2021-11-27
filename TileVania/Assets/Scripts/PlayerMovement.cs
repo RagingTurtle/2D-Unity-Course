@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float moveSpeed = 2f;
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float climbSpeed = 3f;
+    [SerializeField] GameObject bullet;
+    [SerializeField] Transform gun;
     Vector2 moveInput;
     Rigidbody2D playerRigidbody2D;
     Animator playerAnimator;
@@ -36,6 +38,13 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    void OnFire(InputValue value)
+    {
+        if (isAlive)
+        {
+            Instantiate(bullet, gun.position, transform.rotation);
+        }
+    }
     void OnMove(InputValue value)
     {
         if (isAlive)
@@ -92,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Die()
     {
-        if (playerBodyCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy","Hazard")))
+        if (playerBodyCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazard")))
         {
             isAlive = false;
             playerAnimator.SetTrigger("Die");
