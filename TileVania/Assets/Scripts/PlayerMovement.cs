@@ -106,6 +106,7 @@ public class PlayerMovement : MonoBehaviour
             isAlive = false;
             playerAnimator.SetTrigger("Die");
             GetComponent<SpriteRenderer>().color = Color.red;
+            FindObjectOfType<GameSession>().ProcessPlayerDeath();
         }
     }
 }
