@@ -15,15 +15,15 @@ TagManager:
   - UI
   - Ground
   - Climbing
-  - 
-  - 
-  - Bouncing
-  - 
-  - Hazard
-  - Enemy
   - Player
   - Background
+  - Bouncing
+  - Enemy
+  - Hazard
   - Bullet
+  - 
+  - 
+  - 
   - 
   - 
   - 
