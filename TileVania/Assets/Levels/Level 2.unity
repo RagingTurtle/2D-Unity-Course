@@ -9373,6 +9373,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin
       objectReference: {fileID: 0}
+    - target: {fileID: 3787449707529296621, guid: b36a52e06155fe14bba88ff1c4478c22, type: 3}
+      propertyPath: coinSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 366e7c0204469ae428ba9c287048b317, type: 3}
+    - target: {fileID: 7371222993380863820, guid: b36a52e06155fe14bba88ff1c4478c22, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b36a52e06155fe14bba88ff1c4478c22, type: 3}
 --- !u!1 &1773194647
