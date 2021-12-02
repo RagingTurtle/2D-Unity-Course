@@ -10,7 +10,7 @@ public class Health : MonoBehaviour
     {
         DamageDealer damageDealer = other.GetComponent<DamageDealer>();
 
-        if (damageDealer != null && tag == "Player")
+        if (damageDealer != null)
         {
             TakeDamage(damageDealer.GetDamage());
             damageDealer.Hit();
