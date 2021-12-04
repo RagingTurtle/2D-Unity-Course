@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 37988493130643004}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2492645615394244998}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!212 &8969682566827922464
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -69,7 +69,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1245020241
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 62a411c3518fb9340b0f6a8fb5ff93fc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 1754624964882225330}
   - component: {fileID: 1406068166019755778}
   - component: {fileID: -2058102516357478071}
+  - component: {fileID: 5309734569826559331}
   m_Layer: 6
   m_Name: Enemy 0
   m_TagString: Enemy
@@ -179,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e56eca6a899d6344fb4e68eb66e877fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 30
 --- !u!114 &-2058102516357478071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,3 +194,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+--- !u!114 &5309734569826559331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6150715264179985147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03aae85d588f8484989faefd57f4d0aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 5932589934182231803, guid: 57eb4af8dfd003a4aa783284d9d5760c, type: 3}
+  projectileSpeed: 10
+  projectileLifetime: 5
+  baseFiringRate: 1
+  useAI: 1
+  firingRateVariance: 0.5
+  minFiringRate: 0.1
+  isFiring: 0
